@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PEAK Mini Event - правила</title>
+  <meta name="description" content="Правила PEAK mini event: очки, мини-игры, бонусные предметы и финал.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #080606;
+      --paper: #fff2d8;
+      --paper-soft: #f4dcc0;
+      --rose: #ff9dbb;
+      --rose-hot: #ff5f96;
+      --rose-deep: #9f315d;
+      --cream: #f7d7ad;
+      --sage: #b8d49b;
+      --line: rgba(255, 242, 216, 0.24);
+      --panel: rgba(255, 242, 216, 0.055);
+      --panel-strong: rgba(255, 157, 187, 0.12);
+      --shadow: rgba(255, 95, 150, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 16% 4%, rgba(255, 157, 187, 0.16), transparent 25rem),
+        radial-gradient(circle at 86% 12%, rgba(247, 215, 173, 0.12), transparent 28rem),
+        linear-gradient(180deg, #11090d 0%, var(--ink) 42%, #050404 100%);
+      color: var(--paper);
+      font-family: "Comic Sans MS", "Bradley Hand", "Segoe Print", cursive;
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+      background-size: 3.4rem 3.4rem;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 78%);
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    .hero {
+      position: relative;
+      padding: clamp(28px, 5vw, 56px) 0 26px;
+      border-bottom: 2px dashed var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 12px;
+      color: var(--rose);
+      font-size: clamp(15px, 2vw, 18px);
+      letter-spacing: 0;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--rose);
+      transform: rotate(-2deg);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-family: "Segoe Print", "Comic Sans MS", "Bradley Hand", cursive;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 920px;
+      color: var(--paper);
+      font-size: clamp(44px, 9vw, 104px);
+      text-shadow: 0 7px 0 rgba(159, 49, 93, 0.55), 0 0 28px var(--shadow);
+    }
+
+    .subtitle {
+      max-width: 770px;
+      margin: 22px 0 0;
+      color: var(--paper-soft);
+      font-size: clamp(18px, 2.2vw, 25px);
+    }
+
+    .quick {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 28px 0 0;
+    }
+
+    .quick a {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      border: 2px solid rgba(255, 157, 187, 0.45);
+      border-radius: 8px;
+      background: rgba(255, 157, 187, 0.08);
+      color: var(--paper);
+      text-decoration: none;
+      text-align: center;
+      font-size: 18px;
+      transform: rotate(var(--tilt, -1deg));
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .quick a:nth-child(even) {
+      --tilt: 1deg;
+    }
+
+    .quick a:hover,
+    .quick a:focus-visible {
+      background: rgba(255, 157, 187, 0.18);
+      border-color: var(--rose);
+      transform: translateY(-2px) rotate(0deg);
+      outline: none;
+    }
+
+    main {
+      padding-top: 28px;
+    }
+
+    .section {
+      position: relative;
+      margin: 22px 0;
+      padding: clamp(20px, 3vw, 32px);
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, rgba(255, 242, 216, 0.07), transparent 48%),
+        var(--panel);
+      box-shadow: 0 22px 80px rgba(0, 0, 0, 0.22);
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px dashed rgba(255, 157, 187, 0.24);
+      border-radius: 6px;
+      pointer-events: none;
+    }
+
+    .section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      color: var(--rose);
+      font-size: clamp(30px, 4.5vw, 54px);
+      text-shadow: 0 3px 0 rgba(159, 49, 93, 0.48);
+    }
+
+    h3 {
+      margin: 24px 0 10px;
+      color: var(--cream);
+      font-size: clamp(22px, 3vw, 32px);
+    }
+
+    p {
+      margin: 0 0 14px;
+      font-size: clamp(17px, 1.9vw, 21px);
+    }
+
+    ul,
+    ol {
+      margin: 10px 0 0;
+      padding-left: 1.35rem;
+      font-size: clamp(17px, 1.9vw, 21px);
+    }
+
+    li {
+      margin: 7px 0;
+      padding-left: 4px;
+    }
+
+    strong {
+      color: #ffd4e1;
+      font-weight: 700;
+    }
+
+    em {
+      color: var(--cream);
+      font-style: normal;
+    }
+
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .score {
+      min-height: 104px;
+      padding: 16px;
+      border: 2px solid rgba(255, 157, 187, 0.34);
+      border-radius: 8px;
+      background: rgba(255, 157, 187, 0.08);
+      text-align: center;
+      transform: rotate(var(--tilt, -0.8deg));
+    }
+
+    .score:nth-child(2),
+    .score:nth-child(4) {
+      --tilt: 0.8deg;
+    }
+
+    .score b {
+      display: block;
+      color: var(--rose);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1;
+    }
+
+    .score span {
+      display: block;
+      margin-top: 8px;
+      color: var(--paper-soft);
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    .note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--rose);
+      border-radius: 0 8px 8px 0;
+      background: var(--panel-strong);
+      color: var(--paper);
+    }
+
+    .biome-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .biome {
+      padding: 18px;
+      border: 2px solid rgba(247, 215, 173, 0.26);
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .biome-title {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .biome-title h3 {
+      margin: 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 4px 10px;
+      border: 1px solid rgba(255, 157, 187, 0.48);
+      border-radius: 999px;
+      color: var(--rose);
+      background: rgba(255, 157, 187, 0.08);
+      font-size: 15px;
+      line-height: 1.15;
+    }
+
+    .items {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .item-line {
+      padding: 12px 14px;
+      border: 1px dashed rgba(255, 242, 216, 0.28);
+      border-radius: 8px;
+      background: rgba(255, 242, 216, 0.045);
+      color: var(--paper-soft);
+      font-size: clamp(16px, 1.7vw, 19px);
+    }
+
+    .item-line b {
+      color: var(--cream);
+    }
+
+    .finale {
+      border-color: rgba(255, 95, 150, 0.48);
+      background:
+        linear-gradient(145deg, rgba(255, 95, 150, 0.16), transparent 54%),
+        rgba(255, 242, 216, 0.055);
+    }
+
+    .footer {
+      margin-top: 26px;
+      color: rgba(255, 242, 216, 0.62);
+      text-align: center;
+      font-size: 15px;
+    }
+
+    @media (max-width: 820px) {
+      .quick,
+      .score-grid,
+      .items {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .page {
+        width: min(100% - 24px, 1120px);
+        padding-top: 20px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .quick,
+      .score-grid,
+      .items {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 18px;
+      }
+
+      .section::before {
+        inset: 6px;
+      }
+
+      ul,
+      ol {
+        padding-left: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <p class="eyebrow">mini event</p>
+      <h1>PEAK правила</h1>
+      <p class="subtitle">Одна страница для ивента: очки за биомы, мини-игры, бонусные предметы и финальная битва.</p>
+      <nav class="quick" aria-label="Разделы правил">
+        <a href="#common">Общие правила</a>
+        <a href="#scoring">Подсчет очков</a>
+        <a href="#games">Мини-игры</a>
+        <a href="#final">Финал</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section" id="common">
+        <h2>Общие правила</h2>
+        <p>Каждый биом оценивается отдельно. Основная цель команды - дойти до костра и сохранить обоих участников.</p>
+
+        <h3 id="scoring">Подсчет очков</h3>
+        <div class="score-grid" aria-label="Система очков">
+          <div class="score"><b>3</b><span>очка за 1 место</span></div>
+          <div class="score"><b>2</b><span>очка за 2 место</span></div>
+          <div class="score"><b>1</b><span>очко за 3 место</span></div>
+          <div class="score"><b>+3</b><span>если оба дошли до костра</span></div>
+        </div>
+
+        <h3>Как определяется место</h3>
+        <p>Место команды считается <strong>по последнему дошедшему участнику</strong>.</p>
+        <ul>
+          <li>Если один игрок пришел первым, а второй - последним, команда занимает <strong>3 место</strong>.</li>
+          <li>Если один игрок дошел до костра, а второй погиб, место определяется по дошедшему игроку, но команда <strong>не получает бонус +3</strong> за сохранение напарника.</li>
+          <li>Если оба участника команды погибли, место определяется по моменту <strong>смерти второго игрока</strong>.</li>
+          <li>Чем дольше в забеге оставался хотя бы один участник команды, тем выше ее место среди погибших команд.</li>
+          <li>Если погибают все команды, первое место получает команда, чей последний участник погиб позже остальных.</li>
+        </ul>
+
+        <h3>Правила прохождения</h3>
+        <p>Во время забега запрещено:</p>
+        <ul>
+          <li>брать рюкзаки;</li>
+          <li>открывать статуи;</li>
+          <li>переносить предметы между биомами: каждый биом начинается с пустым инвентарем;</li>
+          <li>исключение - маршмеллоу/хотдог и предмет, полученный за мини-игру;</li>
+          <li>выбрасывать предметы из чемоданов, кустов и других мест так, чтобы они не достались остальным игрокам;</li>
+          <li>съедать всю найденную еду без необходимости - проверить это невозможно, поэтому все на совести игроков;</li>
+          <li>уходить с костра после того, как дошли до него, иначе место не засчитается;</li>
+          <li>съедать соперников.</li>
+        </ul>
+      </section>
+
+      <section class="section" id="games">
+        <h2>Мини-игры</h2>
+        <p>В конце каждого биома проводится мини-игра. За нее можно получить <strong>1, 0.5 или 0.25 балла</strong> в зависимости от места.</p>
+        <p>Место в мини-игре также определяет порядок выбора бонусного предмета на следующий биом. Для четвертого биома выбор бонусного предмета отсутствует.</p>
+
+        <div class="biome-list">
+          <article class="biome">
+            <div class="biome-title">
+              <h3>Первый биом</h3>
+              <span class="tag">кокосовые дуэли</span>
+            </div>
+            <p>Наверху проходят кокосовые дуэли. Нельзя ловить кокосы: можно только кидать и уворачиваться, не выходя за границы зоны.</p>
+            <p>Каждая пара сражается с каждой. Игрок, в которого попали кокосом, выбывает из битвы в этом раунде. Победой команды считается момент, когда оба игрока противоположной команды выбыли.</p>
+            <p>При равном количестве побед проводится дополнительный общий раунд между командами с равным результатом. Места определяются по порядку полного выбывания команд.</p>
+            <div class="items">
+              <div class="item-line"><b>Если дальше тропики:</b> противоядие, аптечка, веревочная пушка, захват.</div>
+              <div class="item-line"><b>Если дальше корни:</b> молоко, аптечка, веревочная пушка, захват.</div>
+            </div>
+          </article>
+
+          <article class="biome">
+            <div class="biome-title">
+              <h3>Второй биом</h3>
+              <span class="tag">полет на глайдере</span>
+            </div>
+            <p>Наверху проходит полет на глайдере из пушки. Каждая пара получает одну пушку и два глайдера. Команда сама решает, как установить пушку у костра.</p>
+            <p>Можно не ставить свою пушку и использовать пушку другой команды, но нужно выбрать пушку до начала полетов. После старта выбор менять нельзя.</p>
+            <p>У каждого участника только одна попытка полета. После приземления или падения нельзя двигаться с места, пока расстояние от костра не будет зафиксировано. Места определяются по лучшему результату команды.</p>
+            <div class="items">
+              <div class="item-line"><b>Если дальше снега:</b> молоко, грелка, аптечка, цепемет.</div>
+              <div class="item-line"><b>Если дальше пустыня:</b> молоко, средство от загара, зонтик, захват.</div>
+            </div>
+          </article>
+
+          <article class="biome">
+            <div class="biome-title">
+              <h3>Третий биом</h3>
+              <span class="tag">фрисби в центр</span>
+            </div>
+            <p>Наверху проходит кидание фрисби в центр зоны. У каждого участника одна попытка. Кто ближе к центру, тот выше в зачете.</p>
+            <p>Для команды считается лучший результат одного из участников. Расстояние определяется судейским решением, то есть на глаз.</p>
+            <p>От места зависит порядок выбора предметов в подарок.</p>
+            <div class="items">
+              <div class="item-line"><b>Предметы:</b> аптечка, молоко, захват, аптечка.</div>
+            </div>
+          </article>
+
+          <article class="biome">
+            <div class="biome-title">
+              <h3>Четвертый биом</h3>
+              <span class="tag">банановая гонка</span>
+            </div>
+            <p>Наверху проходит банановая гонка. Перед стартом нужно отхилиться до полной стамины и убрать дополнительную стамину.</p>
+            <p>Нельзя прыгать. Можно только бежать вперед. Место определяется по лучшему результату в команде.</p>
+            <p class="note">За эту мини-игру начисляются бонусные очки, но выбор предмета на следующий биом не проводится.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section finale" id="final">
+        <h2>Финал</h2>
+        <p>После прохождения вулкана все участники должны оставаться <strong>на вершине вулкана/цитадели у флажков</strong>, не заходя на пик.</p>
+
+        <h3>Битва на ножах</h3>
+        <p>Все стоят у флажков. Каждый получает ритуальный нож, который применяется только со спины.</p>
+        <p>Побеждает последний выживший и приносит своей команде <strong>2 очка</strong>.</p>
+        <p class="note">Если участники намеренно затягивают бой и не пытаются атаковать друг друга, хост может завершить мини-игру без начисления 2 очков.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      PEAK mini event rules
+    </footer>
+  </div>
+</body>
+</html>
